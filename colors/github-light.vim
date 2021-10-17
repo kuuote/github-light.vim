@@ -4,6 +4,8 @@ if &bg != 'light'
   set background=light
 end
 
+hi clear
+
 let colors_name = 'github-light'
 
 " Highlighting function
@@ -185,6 +187,8 @@ call s:_('PmenuSbar',        '',       theme.bg_dark)
 call s:_('PmenuThumb',       '#666660', '#666660')
 
 if exists('&pumblend')
+  let s:pumblend = &pumblend
+  autocmd ColorSchemePre * ++once let &pumblend = s:pumblend
   set pumblend=20
 end
 
